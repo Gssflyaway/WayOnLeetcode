@@ -2,10 +2,7 @@ package Tree;
 
 import sun.reflect.generics.tree.Tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by sigong on 2018/7/4.
@@ -67,6 +64,7 @@ public class _94_BinaryTreeInorderTraversal {
                 }
                 return integerList;
         }
+
 
 //        portorder recursive
 //        public List<Integer> postOrderTraversal(TreeNode root) {
