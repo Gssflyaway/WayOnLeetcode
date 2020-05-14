@@ -6,6 +6,10 @@ import java.util.*;
 
 /**
  * Created by sigong on 2018/7/4.
+ * 前序，中序都很简单
+ *
+ * 后序遍历：
+ * 记住一个list的应用
  */
 public class _94_BinaryTreeInorderTraversal {
 

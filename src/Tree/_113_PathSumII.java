@@ -6,6 +6,12 @@ import java.util.List;
 /**
  * Created by sigong on 2018/9/8.
  */
+
+/*
+* 这一题稍微复杂一点，看起来简单
+* https://leetcode.com/problems/path-sum-ii/discuss/36695/Java-Solution%3A-iterative-and-recursive
+* 参考下递归的思路，有深搜的思路
+* */
 public class _113_PathSumII {
 
     class TreeNode {
@@ -28,6 +34,7 @@ public class _113_PathSumII {
         if (root.left == null && root.right == null){
             nodeSum += root.val;
             if (nodeSum == sum){
+                System.out.println(root.val + "added to numberlist");
                 numberList.add(root.val);
                 resultList.add(numberList);
             }
@@ -42,6 +49,7 @@ public class _113_PathSumII {
         }
         if(resultList.size() != 0){
             for (List<Integer> list:resultList){
+                System.out.println(root.val + "added to resultList");
                 list.add(0, root.val);
             }
         }
@@ -81,4 +89,19 @@ public class _113_PathSumII {
             System.out.println("");
         }
     }
+
+//    public List<List<Integer>> pathSum_bak (TreeNode root, int sum) {
+//        if (root == null)
+//            return new ArrayList<>();
+//
+//        List<List<Integer>> result = new ArrayList<>();
+//        gatherPath(root, sum, result);
+//        return result;
+//    }
+//
+//    private void gatherPath(TreeNode root, int sum, List<List<Integer>> result) {
+//        if (root.left == null && root.right == null){
+//            if (sum == root.val)
+//        }
+//    }
 }

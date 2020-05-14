@@ -42,9 +42,10 @@ public class _97_InterleavingString {
         return dp[len1][len2];
     }
 
+
     public static void main(String[] args) {
         _97_InterleavingString main = new _97_InterleavingString();
-//        System.out.println(main.isInterleave("aabcc", "dbbca", "aadbbcbcac"));
-        System.out.println(main.isInterleave("aa", "ab", "abaa"));
+        System.out.println(main.isInterleave("aabcc", "dbbca", "aadbbcbcac"));
+//        System.out.println(main.isInterleave1("aa", "ab", "abaa"));
     }
 }

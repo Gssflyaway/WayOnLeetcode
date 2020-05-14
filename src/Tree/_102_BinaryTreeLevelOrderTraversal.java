@@ -3,6 +3,7 @@ package Tree;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Created by sigong on 2018/9/20.
@@ -71,7 +72,37 @@ public class _102_BinaryTreeLevelOrderTraversal {
         t2.left = t4;
         t2.right = t5;
 
-        main.levelOrder(t1);
+        main.levelOrder_bak(t1);
+    }
+
+    public List<List<Integer>> levelOrder_bak(TreeNode root){
+        if (root ==  null)
+            return new LinkedList<>();
+        Queue<TreeNode> nodeList = new LinkedList<>();
+
+        nodeList.offer(root);
+        nodeList.offer(null);
+
+        List<List<Integer>> levelList = new ArrayList<>();
+        List<Integer> integerList = new ArrayList<>();
+        while (!nodeList.isEmpty()){
+            TreeNode treeNode = nodeList.poll();
+            if (treeNode == null) {
+                levelList.add(integerList);
+                integerList = new ArrayList<>();
+            } else {
+                TreeNode nextNode = nodeList.peek();
+                integerList.add(treeNode.val);
+                if (treeNode.left != null)
+                    nodeList.add(treeNode.left);
+                if (treeNode.right != null)
+                    nodeList.add(treeNode.right);
+                if (nextNode == null)
+                    nodeList.add(null);
+            }
+        }
+        levelList.remove(levelList.size()-1);
+        return levelList;
     }
 
 }

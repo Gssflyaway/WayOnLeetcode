@@ -69,4 +69,6 @@ public class _105_ConstructBinaryTreefromPreorderandInorderTraversal {
         _105_ConstructBinaryTreefromPreorderandInorderTraversal.TreeNode treeNode= main.buildTree(pre, in);
         System.out.println("haha");
     }
+
+
 }
