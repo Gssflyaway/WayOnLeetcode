@@ -11,12 +11,7 @@ public class _295_FindMedianfromDataStream {
 
     public _295_FindMedianfromDataStream(){
         smallHeapQueue = new PriorityQueue<>();
-        Comparator<Integer> comparator = new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2-o1;
-            }
-        };
+        Comparator<Integer> comparator = (o1, o2) -> o2-o1;
         bigHeapQueue = new PriorityQueue<>(comparator);
     }
 

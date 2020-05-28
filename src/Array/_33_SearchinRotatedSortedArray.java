@@ -48,7 +48,42 @@ public class _33_SearchinRotatedSortedArray {
         return -1;
     }
 
+    public int search1(int[] nums, int target) {
+        if (nums == null || nums.length == 0)
+            return -1;
+        if (nums.length == 1)
+            return nums[0] == target ? 0 : -1;
+        int len = nums.length;
+        int start = 0, end = len;
+        int mid = -1;
+
+        while (start<end) {
+            mid = start + (end-start)/2;
+            if (nums[mid] == target)
+                return mid;
+            if (nums[mid] > nums[start]) {
+                if (target < nums[start])
+                    start = mid+1;
+                else if (target > nums[mid])
+                    start = mid+1;
+                else
+                    end = mid;
+            } else {
+                if (target >= nums[start])
+                    end = mid;
+                else if (target < nums[mid])
+                    end = mid;
+                else
+                    start = mid + 1;
+            }
+        }
+        System.out.println(start + " " + mid + " " + end);
+        if (mid >= len)
+            return -1;
+        return nums[mid] == target ? mid : -1;
+    }
+
     public static void main(String[] args) {
-        System.out.println(new _33_SearchinRotatedSortedArray().search(new int[]{4,5,6,7,0,1,2}, 0));
+        System.out.println(new _33_SearchinRotatedSortedArray().search1(new int[]{3,1}, 2));
     }
 }
